@@ -52,7 +52,7 @@ public class Battleship extends JFrame implements ActionListener{
 	Random random = new Random();
 	Gameboard pcBoard;
 	Gameboard playerBoard;
-	String saveFile = "bin/save-file.txt";
+	String saveFile = "files/save-file.txt";
 
 	//AI variables
 	int pcFocusX;
@@ -107,12 +107,12 @@ public class Battleship extends JFrame implements ActionListener{
 	Border blackB = BorderFactory.createLineBorder(Color.GRAY, 3);
 	Border emptyB = BorderFactory.createEmptyBorder(3,3,3,3);
 	Border compB = BorderFactory.createCompoundBorder(blackB, emptyB);
-	ImageIcon redTile = new ImageIcon(ImageIO.read(new File("bin/tiles/red.png")));
-	ImageIcon redXTile = new ImageIcon(ImageIO.read(new File("bin/tiles/redx.png")));
-	ImageIcon blueTile = new ImageIcon(ImageIO.read(new File("bin/tiles/blue.png")));
-	ImageIcon blueXTile = new ImageIcon(ImageIO.read(new File("bin/tiles/bluex.png")));
-	ImageIcon blueOTile = new ImageIcon(ImageIO.read(new File("bin/tiles/blueo.png")));
-	ImageIcon bluePressedTile = new ImageIcon(ImageIO.read(new File("bin/tiles/bluePressed.png")));
+	ImageIcon redTile = new ImageIcon(ImageIO.read(new File("files/red.png")));
+	ImageIcon redXTile = new ImageIcon(ImageIO.read(new File("files/redx.png")));
+	ImageIcon blueTile = new ImageIcon(ImageIO.read(new File("files/blue.png")));
+	ImageIcon blueXTile = new ImageIcon(ImageIO.read(new File("files/bluex.png")));
+	ImageIcon blueOTile = new ImageIcon(ImageIO.read(new File("files/blueo.png")));
+	ImageIcon bluePressedTile = new ImageIcon(ImageIO.read(new File("files/bluePressed.png")));
 
 
 	public Battleship() throws IOException {
