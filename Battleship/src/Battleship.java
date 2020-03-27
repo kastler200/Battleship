@@ -92,7 +92,6 @@ public class Battleship extends JFrame implements ActionListener{
 	JLabel sideBotLabel = new JLabel();
 	JLabel sideTopLabel = new JLabel();
 	JComboBox<Object> shipButtons;
-	JButton startButton;
 	JButton resetButton;
 	JMenuBar mBar = new JMenuBar();
 	JMenu menu;
@@ -146,11 +145,8 @@ public class Battleship extends JFrame implements ActionListener{
 		topPanel.add(shipButtons, BorderLayout.CENTER);
 		botPanel.add(botLabel);
 
-		startButton = new JButton("Start!");
 		resetButton = new JButton("Reset");
 		resetButton.addActionListener(this);
-		startButton.addActionListener(this);
-		topPanel.add(startButton);
 		topPanel.add(resetButton);
 
 		sideBotLabel.setText("Something will go here");
@@ -323,7 +319,7 @@ public class Battleship extends JFrame implements ActionListener{
 
 		//m adds how many ships are set. if equal to total number of ships, can set the grid
 		if (m == total) {
-			int n = (int)JOptionPane.showConfirmDialog(centerPanel, "Are you ready to play? Hit yes to continue.", "Ready?", JOptionPane.YES_NO_OPTION);
+			int n = (int)JOptionPane.showConfirmDialog(centerPanel, "Are you ready to play? Hit yes to continue.", "Battleship", JOptionPane.YES_NO_OPTION);
 
 			if (n == JOptionPane.YES_OPTION) {
 				gridIsSet = true;
@@ -990,26 +986,6 @@ public class Battleship extends JFrame implements ActionListener{
 				coordOneSet = false;
 				coordTwoSet = false;
 				break;
-			}
-		}else if (e.getSource().equals(startButton)) {
-			if (gridIsSet == false) {
-				int total = shipsAreSet.length;
-				int m = 0;
-				for (int k = 0; k < total; k++) {
-					if (shipsAreSet[k]) {
-						m++;
-					}
-				}
-
-				//m adds how many ships are set. if equal to total number of ships, can set the grid
-				if (m == total) {
-					gridIsSet = true;
-					updateLabelGrid();
-					setupPCShips();
-					newButtonGrid();
-				}else {
-					botLabel.setText("Please set your ships before starting the game.");
-				}
 			}
 		}else if (e.getSource().equals(resetButton)) {
 			if (coordOneSet && coordTwoSet == false) {
